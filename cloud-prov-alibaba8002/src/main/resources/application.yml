@@ -1,0 +1,20 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: cloud-alibaba-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: www.nacos.com:8848
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

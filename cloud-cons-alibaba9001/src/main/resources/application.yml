@@ -1,0 +1,17 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: cloud-alibaba-consumer9001
+  cloud:
+    nacos:
+      discovery:
+        server-addr: www.nacos.com:8848
+
+service-url:
+  nacos-user-service: http://cloud-alibaba-provider
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'

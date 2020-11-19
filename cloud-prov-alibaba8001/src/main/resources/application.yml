@@ -6,7 +6,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 140.143.153.238:8848
+        server-addr: www.nacos.com:8848
 
 #management:
 #  endpoints:

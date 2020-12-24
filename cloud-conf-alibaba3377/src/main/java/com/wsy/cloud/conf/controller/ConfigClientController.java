@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope //支持nacos的动态刷新功能
 public class ConfigClientController {
 
-    @Value("${config.info}")
+    @Value("${spring.test}")
     private String configInfo;
 
     @GetMapping("/info")

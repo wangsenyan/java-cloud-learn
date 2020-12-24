@@ -36,3 +36,7 @@ mvnw
 mvnw.cmd
 cloud-prov-8001/**/application.*
 cloud-mbg/**/*.properties
+#忽略所有子目录下yml,yaml,properties结尾的文件
+**/*.yml
+**/*.yaml
+**/*.properties

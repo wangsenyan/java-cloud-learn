@@ -26,7 +26,23 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  *  - 异常比例,秒
  *    - QPS>=5 且异常比例(秒级统计)超过阈值时,触发降级;时间窗口期结束后,关闭降级
  *  - 异常数
- * 热点key限流 BlockException
+ * 热点key限流 BlockException 只对违背配置的项进行防备
+ *    - @SentinelResource(value = "testHotKey",blockHandler = "deal_testHotKey")
+ *    - 参数例外项
+ * 系统规则
+ *   - load
+ *   - rt
+ *   - 线程数
+ *   - 入口qps
+ *   - cpu使用率
+ *   SphU 定义资源
+ *   Tracer 定义统计
+ *   ContextUtil 定义上下文
+ *异常:
+ *  fallback 服务降级,只负责业务异常
+ *  blockHandler 只负责sentinel控制台配置
+ *     都配置,优先blockHandler
+ *  exceptionToIgnore = {Myclass.class} 忽略参数
  */
 @EnableDiscoveryClient
 @SpringBootApplication(exclude ={DataSourceAutoConfiguration.class} )

@@ -64,7 +64,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .accessTokenValiditySeconds(3600)//配置访问token的有效期
                 .refreshTokenValiditySeconds(86400)//配置刷新token的有效期
                 .autoApprove(true) //自动授权配置
-                .redirectUris("http://localhost:9501/login")//配置redirect_uri，用于授权成功后跳转
+                .redirectUris("http://localhost:9501/login","http://localhost:9502/login")//配置redirect_uri，用于授权成功后跳转
                 .scopes("all")//配置申请的权限范围
                 .authorizedGrantTypes("authorization_code","password","refresh_token");//配置grant_type，表示授权类型
     }
